@@ -22,10 +22,10 @@ def jpg_to_png():
         messagebox.showinfo("success ", "your Image converted to Png")
     else:
 
-        label_2 = Label(root, text="Error!", width=20,
+        label_2 = Label(root, text="", width=20,
                         fg="red", font=("bold", 15))
         label_2.place(x=80, y=280)
-        messagebox.showerror("Fail!!", "Something Went Wrong...")
+        messagebox.showerror("Fail!!", "Invalid Image Format...")
 
 
 def png_to_jpg():
@@ -41,11 +41,11 @@ def png_to_jpg():
 
         messagebox.showinfo("success ", "your Image converted to jpg ")
     else:
-        label_2 = Label(root, text="Error!", width=20,
+        label_2 = Label(root, text=" ", width=20,
                         fg="red", font=("bold", 15))
         label_2.place(x=80, y=280)
 
-        messagebox.showerror("Fail!!", "Something Went Wrong...")
+        messagebox.showerror("Fail!!", "Invalid Image Format.....")
 
 
 def image_to_tiff():
@@ -55,6 +55,7 @@ def image_to_tiff():
     export_filename = fd.asksaveasfilename(defaultextension=".tiff")
     im1.save(export_filename)
     messagebox.showinfo("success ", "your Image converted to TIFF")
+
 
 
 def pdf_to_word():
@@ -77,10 +78,6 @@ button3 = Button(root, text="Image_to_TIFF", width=20, height=2, bg="green",
 
 button3.place(x=120, y=220)
 
-button4 = Button(root, text="PDF_to_WORD", width=20, height=2, bg="green",
-                 fg="white", font=("helvetica", 12, "bold"), command=pdf_to_word)
 
-button4.place(x=120, y=320)
-
-root.geometry("500x500+400+200")
+root.geometry("500x400+400+200")
 root.mainloop()
